@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+    np-web:
+        image: richarvey/nginx-php-fpm
+        container_name: np-web
+        volumes:
+            - ./data/html:/var/www/html
+        working_dir: /var/www/html
+        ports:
+            - "8081:80"
+        networks:
+            np-backend:
+                ipv4_address: 172.1.0.2
+                
+networks:
+    np-backend:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.1.0.0/24       

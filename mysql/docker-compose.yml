@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+    mysql:
+        image: mysql
+        container_name: mysql
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user
+            MYSQL_PASSWORD: user
+        networks:
+            mysql-backend:
+                ipv4_address: 172.4.0.2
+                
+                
+networks:
+    mysql-backend:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.4.0.0/24       

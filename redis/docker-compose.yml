@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+    redis:
+        image: redis
+        container_name: redis
+        networks:
+            redis-backend:
+                ipv4_address: 172.5.0.2
+                
+networks:
+    redis-backend:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.5.0.0/24       

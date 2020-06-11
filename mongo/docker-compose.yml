@@ -1,0 +1,25 @@
+version: "3.5"
+
+services: 
+    mongodb:
+        image: mongo:latest
+        restart: always
+        container_name: mongodb
+        volumes:
+            - ./data/db:/data/db
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: root
+        working_dir: /app
+        ports:
+            - "27017:27017"
+        networks:
+            mongo-backend:
+                ipv4_address: 172.6.0.2
+
+networks:
+    mongo-backend:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.6.0.0/24
