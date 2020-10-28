@@ -21,12 +21,12 @@
 ### DB Servers
 #### MySQL(mysql)
 * Network : 172.4.0.2/24
-* Port : 3306 (Not outbound)
+* Port : 3306 (No outbound)
 
 #### Redis(redis)
 * Network : 172.5.0.2/24
-* Port : 6379 (Not outbound)
+* Port : 6379 (No outbound)
 
 #### MongoDB(mongo)
 * Network : 172.6.0.2/24
-* Port : 27017 (Not outbound)
+* Port : 27017 (No outbound)
